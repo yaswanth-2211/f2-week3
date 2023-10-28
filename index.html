@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exclidraw</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+  </head>
+  <body>
+    <div id="root">
+      <div id="top">
+        <button class="btns material-symbols-outlined" onclick="toggleMenu()">menu</button>
+        <div class="options" id="actionbuttons">
+          <button class="btn material-symbols-outlined" id="lockButton">lock</button>
+          <button class="btn material-symbols-outlined">pan_tool_alt</button>
+          <button class="btn material-symbols-outlined">arrow_selector_tool</button>
+          <button class="btn material-symbols-outlined" id="rectangle"   onclick="onActionClick(this)">check_box_outline_blank</button>
+          <button class="btn material-symbols-outlined" id="circle"   onclick="onActionClick(this)">circle</button>
+          <button class="btn material-symbols-outlined" id="arrow"  onclick="onActionClick(this)">trending_flat</button>
+          <button class="btn material-symbols-outlined"  id="line" onclick="onActionClick(this)">horizontal_rule</button>
+          <button class="btn material-symbols-outlined"  id="freehand"   onclick="onActionClick(this)">edit</button>
+          <button class="btn material-symbols-outlined">text_format</button>
+          <button class="btn material-symbols-outlined"  onclick="document.getElementById('myFile').click();">photo_library <input type="file" id="myFile" name="filename" accept="image/*" style="display: none;">
+          </button>
+          <button class="btn material-symbols-outlined" id="eraser"   onclick="onActionClick(this)">ink_eraser</button>
+          <button class="btn material-symbols-outlined">steppers</button>
+        </div>
+        <div class="right">
+          <button class="btn material-symbols-outlined right-top ">group</button>
+          <div class="right-library">
+            <button class="btn material-symbols-outlined ">menu_book</button>
+            <button class=" right-1"><span style="font-size:small;">Library</span></button>
+          </div>
+        </div>
+      </div>
+      <canvas id="canvas" width="400px" height="400px"></canvas>
+      <div id="bottom">
+        <div id="bottom-1">
+          <div class="bottom-left">
+            <div class="gap">
+            <button class="btn material-symbols-outlined">add</button>
+            <button class="btn material-symbols-outlined">money</button>
+            <button class="btn material-symbols-outlined">remove</button>
+          </div>
+            <div class="margin">
+            <button class="btn material-icons" id="undo">undo</button>
+          <button class="btn material-icons" id="redo">redo</button>
+        </div>
+        </div>
+        <div class="right-bottom">
+          <button class="material-symbols-outlined">encrypted</button>
+          <button class="material-symbols-outlined">help</button>
+        </div>
+      </div>
+      </div>
+    </div>
+    <div class="form hide">
+      <label for="strokewidth">Stroke Width</label>
+      <input
+        type="range"
+        id="strokewidth"
+        name="strokewidth"
+        min="3"
+        max="10"
+        oninput="onInput(this)"
+      />
+      <label for="strokestyle">Stroke Color</label>
+      <input
+        type="color"
+        name="strokestyle"
+        id="strokestyle"
+        oninput="onInput(this)"
+      />
+    </div>
+    <script src="./script.js"></script>
+    <script src="./states.js"></script>
+    <script src="./shapes.js"></script>
+    
+    
+  </body>
+</html>
